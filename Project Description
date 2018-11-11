@@ -2,3 +2,10 @@ Website Builder is a python project in which I will be using TKinter along with 
 The program will allow the user to use a WYSIWYG editor to generate websites based off of templates. The user
 will also be able to drag and drop items in the template to match their preferences. The program will then generate 
 html and css files to match what the user made.
+
+The user interface will consist of drag and drop features that allow the user to sculpt their website to their liking.
+
+1st Checkpoint. Basic functionality. One or two templates.
+2nd Checkpoint. Functioning UI. One or two more templates.
+3rd Checkpoint. Drag and Drop functionality
+Final Checkpoint. UI done, and more templates available.
