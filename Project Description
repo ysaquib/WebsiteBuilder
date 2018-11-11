@@ -1,0 +1,4 @@
+Website Builder is a python project in which I will be using TKinter along with HTML Parser python libraries. 
+The program will allow the user to use a WYSIWYG editor to generate websites based off of templates. The user
+will also be able to drag and drop items in the template to match their preferences. The program will then generate 
+html and css files to match what the user made.
