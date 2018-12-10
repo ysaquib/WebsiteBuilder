@@ -349,6 +349,8 @@ def exportToHTML(template):
 	#Get all attr of all sidebar entities and put them in their respective html tags and write it to the file
 	for k in range(len(template.sidebarEntities)):
 		widgetTags = template.mainCanvas.itemcget(template.sidebarEntities[k], "tags")
+		print template.mainCanvas.itemcget(template.sidebarEntities[k], "text")
+
 		if "text" in widgetTags:
 			font = template.mainCanvas.itemcget(template.sidebarEntities[k], "font")
 			newCoords = template.mainCanvas.coords(template.sidebarEntities[k])
@@ -357,27 +359,15 @@ def exportToHTML(template):
 				color = "#ffffff"
 			text = template.mainCanvas.itemcget(template.sidebarEntities[k], "text")
 			text = text.replace("\n","<br>")
-		if "rectangle" in widgetTags:
-			color = template.mainCanvas.itemcget(template.entities[l], "fill")
-			coordinates = template.mainCanvas.coords(template.entities[l])
-			height = str(coordinates[3]-coordinates[1])
-			width = str(coordinates[2]-coordinates[0])
-			print coordinates
-			outputFile.write("<svg width=\""+width+"\" height=\"" +height+"\" style=\"position: absolute; left: "
-				+ str(int(coordinates[2])-300) + "px; top: "+str(int(coordinates[3])-100)+"px;\">"+
-				"<rect width=\""+width+"\" height=\""+height+"\" style=\"fill:"+color+";\"/></svg>\n")
-
 			outputFile.write("<p style=\"" + "position: absolute; left: " + str(newCoords[0]) + "px; top: "+str(newCoords[1])+"px; font-family:" 
 				+ font.split(" ")[0] + "; font-size:"
 				+ str(int(font.split(" ")[1])+4) + "px; color:" + color + ";\">"+text+"</p>\n")
-
 	outputFile.write("</div>\n")
 
 	#Get all attr of all other entities and put them in their respective html tags and write it to the file
 	for l in range(len(template.entities)):
 		widgetTags = template.mainCanvas.itemcget(template.entities[l], "tags")
 		if "text" in widgetTags:
-			print template.mainCanvas.itemcget(template.entities[l], "text")
 			font = template.mainCanvas.itemcget(template.entities[l], "font")
 			newCoords = template.mainCanvas.coords(template.entities[l])
 			color = template.mainCanvas.itemcget(template.entities[l], "fill")
